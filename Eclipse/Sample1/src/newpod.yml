@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: newpod
+spec:
+  containers: 
+    - name: c1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo CloudFolks; sleep 5 ; done"]

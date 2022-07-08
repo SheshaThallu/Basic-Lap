@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<form>
+			Name:<input type="text" id="n"><br> Email:<input
+				type="email" id="e"><br> Age:<input type="number"
+				id="a"><br> Password:<input type="password" id="p"><br>
+			Confirm Password:<input type="password" id="cp"><br> <input
+				type="submit" value="ok" onclick="validate()">
+		</form>
+	</div>
+	<script type="text/javascript">
+		function validate() {
+			const name = document.getElementById('n').value;
+			const email = document.getElementId('e').value;
+			const age = document.getElementById('a').value;
+			const password1 = document.getElementById('p').value;
+			const password2 = documnet.getElemrntById('cp').value;
+			if (!name) {
+				alert("Invalid Name");
+				return;
+			}
+			if (!email) {
+				alert("Invalid Email");
+				return;
+			}
+			if (number(age) < 18) {
+				alert("You are not Eligible");
+				return;
+			}
+			if (!age) {
+				alert("Invalid Age");
+				return;
+			}
+			if (password1 != password2) {
+				alert("Password didn't match");
+				return;
+			}
+		}
+	</script>
+</body>
+</html>

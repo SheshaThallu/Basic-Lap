@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--  <h1 id="h1">Calculator</h1>
+    First Number: <input type="number" id="first" /> <br>
+    Second Number: <input type="number" id="second" /> <br>
+    Result: <input type="number" id="result" /> <br>
+    <br>
+    <br>
+    <input type="button" onclick="add()" value="ADDITION" />
+    <input type="button" onclick="sub()" value="SUBTRACTTION" /> -->
+	<script type="text/javascript">
+		const heading = document.createElement("h1");
+		heading.appendChild(document.createTextNode("Calculator"));
+		const element = document.getElementsByTagName('body');
+		element[0].appendChild(heading);
+		element[0].appendChild(document.createTextNode("First Number:"));
+		const input1 = document.createElement("input");
+		input1.type = "text";
+		input1.id = "first";
+		element[0].appendChild(input1);
+		element[0].appendChild(document.createElement("br"));
+		element[0].appendChild(document.createElement("br"));
+		let text3 = document.createTextNode("Second Number:");
+		element[0].appendChild(text3);
+		const input2 = document.createElement("input");
+		input2.type = "text";
+		input2.id = "second";
+		element[0].appendChild(input2);
+		element[0].appendChild(document.createElement("br"));
+		element[0].appendChild(document.createElement("br"));
+		const btn1 = document.createElement("input");
+		btn1.type = "button";
+		btn1.onclick=add;
+		btn1.value = "Ok";
+		element[0].appendChild(btn1);
+
+		function add() 
+		{
+			const a = Number(input1.value);
+			const b = Number(input2.value);
+			alert(a + b);
+		}
+	</script>
+</body>
+</html>
