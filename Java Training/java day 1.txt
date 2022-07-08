@@ -1,0 +1,345 @@
+============================= Java Programming ===================================================
+1. JDK -> Java Development Kit  ==> Compiler + JVM => is for Developer
+2. JRE -> Java Runtime Environment ==> JVM => is for Client
+3. JVM -> Java Virtual Machine
+4. JIT -> Just In Time (Compiler)
+
+---------------------------------------------------
+In Python:
+-----------------
+print('Hello')
+
+In C:
+------------
+#include <stdio.h>
+void main()
+{
+	printf("Hello");
+}
+
+In Java:
+------------
+public class Test
+{
+ public static void main(String[] args)
+	{
+		System.out.print("Hello");
+	}
+}
+-----------------------------------------------------------------
+Program is a set of executable instructions.
+--------------------------------------------------
+
+
+Hello.java      ---Compile ----> Hello.class   --- RUN/Execute -----> Output
+(Source Code)     (compiler)     (byte code)       (JVM convert byte code 
+													into machine code)
+													
+Hello.class   --- RUN/Execute -----> Output
+(JVM convert byte code into machine code)      --> JIT stores this machine code
+
+												---> run directly machine code
+													
+-------------------------------------------------------------------------------------------
+
+Computer = sw + hw;
+Platform = OS + MicroProcessor
+		 = Win + intel
+		 = Linux + intel
+		 = MacOS + intel
+		 
+-----------------------------------------------
+
+For Compilation:
+-----------------
+>javac <SourceCodeFileName>
+
+For Execution:
+---------------
+>java <ClassNameHavingMain>
+
+
+-----------------------------------------------
+*) Java is statically typed language.
+
+------------------------------------------------
+
+byte -> short -> int -> long -> float -> double
+
+char -> int
+
+-------------------------------------------------------------
+  int i =10;  
+  long ln = i;  // OK -> Smaller data to Bigger Data type
+  
+ ----------------------------------
+  long ln =10;
+  int  i =ln; // error -> Bigger data to Smaller Data type (Type mismatch: cannot convert from long to int)
+  
+  ---------------------------------------------
+  
+ Opertors:
+ ===========
+ 
+ 1. Arithmetic Operators
+	  +, -, *, /, %
+	
+Example:
+		int a = 10;
+		int b = 3;
+
+		int plus = a + b;
+		int minus = a - b;
+		int multi = a * b;
+		int div = a / b;
+		int mod = a % b;
+
+		System.out.println("a + b = " + plus); // 13
+		System.out.println("a - b = " + minus); // 7
+		System.out.println("a * b = " + multi); // 30
+		System.out.println("a / b = " + div); // 3
+		System.out.println("a % b = " + mod); // 1
+	
+-------------------------------------------------------------------------------	
+ 2. Relational Operator
+	 a) <, >, <=, >=
+	 b) Operands : Numeric
+		Result: boolean
+	
+ Example:
+		int x =15;
+		boolean b = 10 < x < 20; // ERROR
+		         		
+----------------------------------------------------
+ 
+ 3. Equality Operator
+		a) ==, !=
+		b) Operands : all Primitive and all Reference		
+		   Result: boolean
+	
+	Example:
+	-----------
+	    int a = 10;
+
+		boolean b = 10 == a;
+		System.out.println(b);// true
+
+		b = b == false;
+		System.out.println(b);// false
+	
+---------------------------------------------------------	   
+ 4. Variable increment/decrement
+				++ /--
+ 
+ Example:
+ ----------
+ 
+		int i = 10;
+		
+		a)
+		----
+		 ++i;
+		 SOP(i); //11
+		 
+		b)
+		----
+		 i++;
+		 SOP(i); //11 
+		 
+--------------------------------------
+		int i = 10;
+		
+		a)
+		----
+		int j = ++i; // pre increment
+		
+		 SOP(i); // 11
+		 SOP(j); // 11
+		 
+		b)
+		----
+		int j = i++; // Post- Increment
+		
+		 SOP(i); // 11
+		 SOP(j); //	10	
+		
+=====================================================
+int x = ++5;
+	SOP(x); // error
+	
+int x = - -5;
+SOP(x); // 5
+
+===================================================== 
+5. String Conctenation Operator('+')
+
+	String s1 = "I love ";
+	String s2 = "JAVA";
+	
+	String s = s1 + s2;
+	SOP(s); // I Love Java
+	---------------------------------
+	
+		int x = 10 + 20;
+		System.out.println(x); // 30
+
+		String y = "10" + "20";
+		System.out.println(y); // "1020"
+
+		String z = "10" + 20; //=> "10"+ "20"
+		System.out.println(z); // => "1020" 
+
+------------------------------------------------
+ 6. Boolean Operator
+ ------------------------
+	a) &, |, ^, !
+	b) &&, ||
+	
+	 Operand : Boolen Expr
+	 Result : boolean
+ 
+	int x =15;
+	boolean b = (10 < x) &  (x < 20); // true
+ 
+ -----------------------------------------------------
+  7. Ternary Operator
+  ----------------------
+ 
+find max number between 2 numbers :
+---------------------------------------
+int x = 10;
+int y = 20;
+
+		// Find greater number
+		int max;
+		if (x > y) {
+			max = x;
+		} else {
+			max = y;
+		}
+		System.out.println(max);
+	
+---------------------------------------------------------
+	// Find greater number
+		int max = (x > y) ? x : y;
+		System.out.println(max);	
+		
+		
+===============================================================
+Conditionl Statements:
+=========================
+1. if(<boolExpr>)
+	{
+		// body
+	}
+
+
+2. if(<boolExpr>)
+	{
+		// body
+	}
+	else
+	{
+		// body
+	}
+
+3. if(<boolExpr>)
+	{
+		// body
+	}
+  else if(<boolExpr>)
+	{
+		// body
+	}
+  else
+	{
+		// body
+	}
+
+===================================================================
+
+ int x = 10;
+ 
+ if( x == 15) 
+	 {
+		SOP("Hi");
+	 }
+else
+	{
+	    SOP("Bye");
+	}
+
+-----------------------------------------------------------------------
+Switch Statement:
+--------------------
+Syntax:   x can be 
+					a) char, byte, short, int
+					b) enum, String
+-----------
+	switch( x )
+	{
+	case <label1> :
+				----
+				----
+	case <label1> :
+				----
+				----
+	default :
+			-----
+
+-------------------------------------
+Loops:
+----------
+	
+	
+	
+	}
+
+
+
+
+
+int day = 3;
+		switch (day) {
+		case 1: {
+			System.out.println("Monday");
+			break;
+		}
+		case 2: {
+			System.out.println("Tuesday");
+			break;
+		}
+		case 3: {
+			System.out.println("Wednesday");
+			break;
+		}
+		case 4: {
+			System.out.println("Thursday");
+			break;
+		}
+		case 5: {
+			System.out.println("Friday");
+			break;
+		}
+		case 6: {
+			System.out.println("Saturday");
+			break;
+		}
+		case 7: {
+			System.out.println("Sunday");
+			break;
+		}
+		default:
+			System.out.println("Are you CRAZY");
+		}
+
+
+1. Write a Java program to get a number and print whether it is positive or negative.
+2. Write a Java program to solve quadratic equations
+3. Take three numbers from the user and print the greatest number.
+4. Write a Java program that takes a year from user and print whether that year is a leap year or not.
+5. Write a Java program that takes a number and print whether that number is a Even or Odd.
+6. Write a Java program that takes a number and print whether that number is a Prime or not.
+7. Write a program in Java to input 5 numbers from keyboard and find their sum and average.
+8. Write a program in Java to display the multiplication table of a given integer.
+

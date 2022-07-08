@@ -1,0 +1,402 @@
+first.html
+------------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First</title>
+</head>
+
+<body>
+
+
+    <table border="1" >
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>SALARY</th>
+        </tr>
+        <tr>
+            <td>Shadab</td>
+            <td>35</td>
+            <td>1234</td>
+        </tr>
+        <tr>
+            <td>Aman</td>
+            <td>22</td>
+            <td>4321</td>
+        </tr>
+
+    </table>
+
+
+
+
+    <h1> Heading 1</h1>
+    <h2> Heading 2</h2>
+    <h3> Heading 3</h3>
+    <h4> Heading 4</h4>
+    <h5> Heading 5</h5>
+    <h6> Heading 6</h6>
+
+    <p>
+
+        Hello &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Friends, I am poor boy having Tesla car. I
+        dont have Android phone because I have iPhone 13 max PRO.<br>
+        I wish I can work with windows os. But My Father gifted me MacBook. How sad. Hope u can understand my pain.<br>
+        Thanks
+    </p>
+
+    <a href="second.html" target="_blank">Click Me!</a>
+
+    <ul>
+        <li>JavaSE</li>
+        <li>JavaEE</li>
+        <li>JavaME</li>
+        <li>Spring</li>
+        <li>Python</li>
+    </ul>
+
+    <ol>
+        <li>JavaSE</li>
+        <li>JavaEE</li>
+        <li>JavaME</li>
+        <li>Spring</li>
+        <li>Python</li>
+    </ol>
+
+    <img src="xyz.jpg" height="300" width="400" alt="Java">
+
+
+
+</body>
+
+</html>
+
+=================================================================
+second.html 
+--------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second</title>
+</head>
+
+<body>
+    <h1> Different Input controls</h1>
+
+    TextField: <input type="text"> <br>
+    PasswordField: <input type="password"> <br>
+    Calender: <input type="date"> <br>
+    NumberField: <input type="number"> <br>
+
+    Radio Buttom : <input type="radio" name="gender"> Male | <input type="radio" name="gender"> Female <br>
+
+    CheckBox: <input type="checkbox"> Biryani |
+    <input type="checkbox"> Dosa |
+    <input type="checkbox"> Shahi paneer <br>
+
+    File Field: <input type="file"> <br>
+
+    Simple Button: <input type="button" value="Hello"> <br>
+    Submit Button: <input type="submit"> <br>
+    Reset Button: <input type="reset"> <br>
+
+    <select>
+        <option>Java</option>
+        <option>Python</option>
+        <option>JavaScript</option>
+        <option>Go</option>
+    </select>
+
+    <br>
+    <textarea rows="10" , cols="50">
+    </textarea>
+</body>
+
+</html>
+=================================================================
+fourth.html  google map
+--------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*internal css */
+    </style>
+
+    <script></script>
+
+
+</head>
+
+<body>
+
+    <form action="/path on server" method="how to send request ">
+        Email: <input type="text"> <br><br>
+        Password: <input type="password"> <br><br>
+
+
+        <input type="submit"> <input type="reset">
+
+
+    </form>
+    <!-- How To use Google Map in HTML page-->
+
+    <div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31099.506239009268!2d77.54980772761263!3d13.007738477876131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d7fff79cfc3%3A0xdfbaac7a46a4a5be!2sMalleswaram%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1643699184686!5m2!1sen!2sin"
+            width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
+==========================================================================
+
+
+
+=================
+css demo
+=================
+a.html
+---------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <link rel="stylesheet" href="myStyle.css" type="text/css">
+</head>
+
+<body>
+
+    <h1>This is First Heading</h1>
+    <h1 id="second">This is Second Heading</h1>
+    <h1>This is Third Heading</h1>
+
+    <h1 class="demo">This is Forth Heading</h1>
+    <h1 class="demo">This is Fifth Heading</h1>
+    <h1 class="demo">This is Sixth Heading</h1>
+
+</body>
+
+</html>
+==========================================================
+b.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid green;
+        }
+
+        table {
+
+            margin-left: 10%;
+            width: 80%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: yellow;
+            color: tomato;
+        }
+
+        td {
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.295);
+        }
+
+        li {
+            list-style-image: url(../images/bullet.png)
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>SALARY</th>
+        </tr>
+        <tr>
+            <td>Shadab</td>
+            <td>35</td>
+            <td>1234</td>
+        </tr>
+        <tr>
+            <td>Aman</td>
+            <td>22</td>
+            <td>4321</td>
+        </tr>
+
+    </table>
+
+    <hr>
+    <ul>
+        <li>JavaSE</li>
+        <li>JavaEE</li>
+        <li>JavaME</li>
+        <li>Spring</li>
+        <li>Python</li>
+    </ul>
+
+</body>
+
+</html>
+======================================================================
+c.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            height: 500px;
+            width: 100px;
+        }
+
+        #v {
+            background-color: violet;
+        }
+
+        #i {
+            background-color: indigo;
+        }
+
+        #b {
+            background-color: blue;
+        }
+
+        #g {
+            background-color: green;
+        }
+
+        #y {
+            background-color: yellow;
+        }
+
+        #o {
+            background-color: orange;
+        }
+
+        #r {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+
+            <td>
+                <div id="v"></div>
+            </td>
+            <td>
+                <div id="i"></div>
+            </td>
+            <td>
+                <div id="b"></div>
+            </td>
+            <td>
+                <div id="g"></div>
+            </td>
+            <td>
+                <div id="y"></div>
+            </td>
+            <td>
+                <div id="o"></div>
+            </td>
+            <td>
+                <div id="r"></div>
+            </td>
+
+
+        </tr>
+
+    </table>
+</body>
+
+</html>
+======================================================================
+d.css
+----------
+h1{
+    color: red;
+}
+---------------------------
+d.html
+----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="d.css" type="text/css">
+</head>
+<body>
+   <h1>Hello Bedu</h1> 
+</body>
+</html>
+=======================================================================
+myStyle.css
+---------------
+h1 {
+    color: pink;
+    text-align: center;
+    font-size: 50px;
+}
+
+#second{
+    color: royalblue;
+}
+
+.demo{
+    color: yellow;
+}
+========================================================================

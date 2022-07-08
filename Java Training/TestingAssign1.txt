@@ -1,0 +1,8 @@
+Software
+types
+quality
+product and project
+Why ST
+error, bug, failure
+why software have bugs
+sdlc & modules

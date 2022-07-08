@@ -1,0 +1,129 @@
+
+==================
+Mongodb
+ Instead of using tables and rows as in the traditional relational databases, MongoDB makes use of "collections and documents".
+ Documents consist of "key-value pairs" which are the basic unit of data in MongoDB.
+ Collections contain "sets of documents" and function which is the equivalent of relational database tables.
+  Schema free, lesser data migrations.
+  JSON Querry Language.
+  
+  
+  MongoDB Document
+  ==================
+  
+{
+name: ”Perry”,
+age: 20,
+contact: {
+mobile: ”+91-9273723723”,
+home_address: ”perry street”
+}
+
+
+SQL Databases Record
+=========================
+
+Name 	   age		contact-mobile		home-address
+Perry	   20		9273723723			perry street
+
+
+SQL Database is more suited for businesses and industries that deal with structured and Relational data.
+
+If you desire great speed and certain flexibility with the use of unstructured data within a schemaless environment, "MongoDB" is your go-to. 
+
+
+
+SQL Database												NoSQL Database (MongoDB)
+-----------------											------------------------------
+Row-based													Document-based
+Relational database											Non-relational database
+Table based													A collection based and key-value pair
+Supports SQL query language									Supports JSON query language
+Column based												Field-based
+Support foreign key											No support for foreign key
+Includes predefined schema									Includes dynamic schema
+Vertically scalable – increasing RAM						Horizontally scalable – add more servers
+Not suitable for hierarchical data storage					Best for hierarchical data storage
+
+======================================================================================================
+
+1. Show all databases available in MongoDB
+> show dbs;
+
+2. Switch Database
+> use Batch98;
+
+3. Create a Database
+> use Batch98_2;
+
+4. How to display current DB name
+> db;
+
+5. Show Collections available in Database
+> show collections;
+
+6. How to Create a Collection in a Database
+> db.createCollection(<nameOfCollection>);
+
+7. getting all collection names in database
+> db.getCollectionNames();
+
+8. How to insert one document in the collection
+> db.Laptop.insertOne({"brand" : "HP", "cost" : 35999, "processor" : 'i5' } );
+
+ db.Laptop.count();
+ 
+ 9. How to insert multiple documents in the collection
+>  db.Laptop.insert([
+  {
+    "name": "shadab",
+    "age": 35,
+    "salary": 1234
+  },
+  {
+    "name": "Aman",
+    "age": 25,
+    "salary": 4321
+  }
+] );
+
+
+10. How many documents we have in a collection?
+> db.Laptop.count();
+
+11. find all documents in a collection?
+> db.Laptop.find();
+{ "_id" : ObjectId("61dff70652bf4ef656275c6e"), "brand" : "HP", "cost" : 35999, "processor" : "i5" }
+{ "_id" : ObjectId("61dff98752bf4ef656275c6f"), "name" : "shadab", "age" : 35, "salary" : 1234 }
+{ "_id" : ObjectId("61dff98752bf4ef656275c70"), "name" : "Aman", "age" : 25, "salary" : 4321 }
+
+> db.Laptop.find().pretty();
+{
+        "_id" : ObjectId("61dff70652bf4ef656275c6e"),
+        "brand" : "HP",
+        "cost" : 35999,
+        "processor" : "i5"
+}
+{
+        "_id" : ObjectId("61dff98752bf4ef656275c6f"),
+        "name" : "shadab",
+        "age" : 35,
+        "salary" : 1234
+}
+{
+        "_id" : ObjectId("61dff98752bf4ef656275c70"),
+        "name" : "Aman",
+        "age" : 25,
+        "salary" : 4321
+}
+----------------------------------------------------
+> DELETE:
+===========
+> db.collection.deleteOne({query})
+> db.Laptop.update({"name": "Aman"}, {$set: {"salary" : 9999}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+==============================================================================
+
+CRUD  -> CREATE | RETRIEVE | UPDATE | DELETE

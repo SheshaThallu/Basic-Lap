@@ -1,0 +1,301 @@
+create table college(reg_id integer,name varchar(30),city varchar(20),l_id int(10));
+insert into college(reg_id,name,city,l_id) values(101,'reshab','mumbai',1);
+insert into college(reg_id,name,city,l_id) values(107,'Amal','delhi',2);
+insert into college(reg_id,name,city,l_id) values(103,'jobin','bangalore',3);
+insert into college(reg_id,name,city,l_id) values(78,'ludiya','kolkatta',4);
+insert into college(reg_id,name,city,l_id) values(109,'rohit','kochi',5);
+insert into college(reg_id,name,city,l_id) values(111,'abdul','mysore',6);
+----------------------------------------------------------------------------------------------------------
+create table laptop (id integer,name varchar(30),ram varchar(20),processor varchar(20),primary key(id));
+insert into laptop(id,name,ram,processor) values(1,'hp','8gb','i3');
+insert into laptop(id,name,ram,processor) values(2,'dell','8gb','i7');
+insert into laptop(id,name,ram,processor) values(7,'lenovo','4gb','i5');
+insert into laptop(id,name,ram,processor) values(6,'asus','4gb','i9');
+insert into laptop(id,name,ram,processor) values(9,'acer','4gb','i3');
+----------------------------------------------------------------------------------------------------------
+select * from college inner join laptop where college.l_id=laptop.id;
+
+reg_id	name	city	l_id	id	name	ram	processor
+101	reshab	mumbai	1	1	hp	8gb	i3
+107	Amal	delhi	2	2	dell	8gb	i7
+111	abdul	mysore	6	6	asus	4gb	i9
+----------------------------------------------------------------------------------------------------------
+select * from college left join laptop on college.l_id=laptop.id;
+
+reg_id	name	city		l_id	id	name	ram	processor
+101	reshab	mumbai		1	1	hp	8gb	i3
+107	Amal	delhi		2	2	dell	8gb	i7
+103	jobin	bangalore	3	NULL	NULL	NULL	NULL
+78	ludiya	kolkatta	4	NULL	NULL	NULL	NULL
+109	rohit	kochi		5	NULL	NULL	NULL	NULL
+111	abdul	mysore		6	6	asus	4gb	i9
+----------------------------------------------------------------------------------------------------------
+select * from college right join laptop on college.l_id=laptop.id;
+
+reg_id	name	city	l_id	id	name	ram	processor
+101	reshab	mumbai	1	1	hp	8gb	i3
+107	Amal	delhi	2	2	dell	8gb	i7
+NULL	NULL	NULL	NULL	7	lenovo	4gb	i5
+111	abdul	mysore	6	6	asus	4gb	i9
+NULL	NULL	NULL	NULL	9	acer	4gb	i3
+----------------------------------------------------------------------------------------------------------
+select * from college cross join laptop;
+
+reg_id	name	city		l_id	id	name	ram	processor
+101	reshab	mumbai		1	9	acer	4gb	i3
+101	reshab	mumbai		1	6	asus	4gb	i9
+101	reshab	mumbai		1	7	lenovo	4gb	i5
+101	reshab	mumbai		1	2	dell	8gb	i7
+101	reshab	mumbai		1	1	hp	8gb	i3
+107	Amal	delhi		2	9	acer	4gb	i3
+107	Amal	delhi		2	6	asus	4gb	i9
+107	Amal	delhi		2	7	lenovo	4gb	i5
+107	Amal	delhi		2	2	dell	8gb	i7
+107	Amal	delhi		2	1	hp	8gb	i3
+103	jobin	bangalore	3	9	acer	4gb	i3
+103	jobin	bangalore	3	6	asus	4gb	i9
+103	jobin	bangalore	3	7	lenovo	4gb	i5
+103	jobin	bangalore	3	2	dell	8gb	i7
+103	jobin	bangalore	3	1	hp	8gb	i3
+78	ludiya	kolkatta	4	9	acer	4gb	i3
+78	ludiya	kolkatta	4	6	asus	4gb	i9
+78	ludiya	kolkatta	4	7	lenovo	4gb	i5
+78	ludiya	kolkatta	4	2	dell	8gb	i7
+78	ludiya	kolkatta	4	1	hp	8gb	i3
+109	rohit	kochi		5	9	acer	4gb	i3
+109	rohit	kochi		5	6	asus	4gb	i9
+109	rohit	kochi		5	7	lenovo	4gb	i5
+109	rohit	kochi		5	2	dell	8gb	i7
+109	rohit	kochi		5	1	hp	8gb	i3
+111	abdul	mysore		6	9	acer	4gb	i3
+111	abdul	mysore		6	6	asus	4gb	i9
+111	abdul	mysore		6	7	lenovo	4gb	i5
+111	abdul	mysore		6	2	dell	8gb	i7
+111	abdul	mysore		6	1	hp	8gb	i3
+-----------------------------------------------------------------------------------------------------
+select * from college where city='bangalore';
+
+reg_id	name	city		l_id
+103	jobin	bangalore	3
+----------------------------------------------------------------------------------------------------
+select * from college where reg_id in(101,103,109);
+
+reg_id	name	city		l_id
+101	reshab	mumbai		1
+103	jobin	bangalore	3
+109	rohit	kochi		5
+---------------------------------------------------------------------------------------------------
+select distinct ram from laptop;
+
+ram
+8gb
+4gb
+---------------------------------------------------------------------------------------------------
+create table college(reg_id integer,name varchar(30),city varchar(20),l_id int(10));
+insert into college(reg_id,name,city,l_id) values(101,'reshab','mumbai',1);
+insert into college(reg_id,name,city,l_id) values(107,'Amal','delhi',2);
+insert into college(reg_id,name,city,l_id) values(103,'jobin','bangalore',3);
+insert into college(reg_id,name,city,l_id) values(78,'ludiya','kolkatta',4);
+insert into college(reg_id,name,city,l_id) values(109,'rohit','kochi',5);
+insert into college(reg_id,name,city,l_id) values(111,'abdul','mysore',6);
+insert into college(reg_id,name,city,l_id) values(114,'reab','mumbai',7);
+insert into college(reg_id,name,city,l_id) values(189,'Amul','delhi',8);
+insert into college(reg_id,name,city,l_id) values(190,'bin','bangalore',9);
+insert into college(reg_id,name,city,l_id) values(76,'luya','kolkatta',10);
+insert into college(reg_id,name,city,l_id) values(119,'ritu','kochi',11);
+insert into college(reg_id,name,city,l_id) values(191,'akhil','mysore',12);
+------------------------------------------------------------------------------------------------------
+select * from college where city='bangalore' order by reg_id desc;
+
+reg_id	name	city		l_id
+190	bin	bangalore	9
+103	jobin	bangalore	3
+------------------------------------------------------------------------------------------------------
+select * from college where city='bangalore' order by reg_id asc;
+
+reg_id	name	city		l_id
+103	jobin	bangalore	3
+190	bin	bangalore	9
+------------------------------------------------------------------------------------------------------
+select * from college order by city asc;
+
+reg_id	name	city		l_id
+103	jobin	bangalore	3
+190	bin	bangalore	9
+107	Amal	delhi		2
+189	Amul	delhi		8
+109	rohit	kochi		5
+119	ritu	kochi		11
+78	ludiya	kolkatta	4
+76	luya	kolkatta	10
+101	reshab	mumbai		1
+114	reab	mumbai		7
+111	abdul	mysore		6
+191	akhil	mysore		12
+--------------------------------------------------------------------------------------------------------
+select * from college order by city desc;
+
+reg_id	name	city		l_id
+111	abdul	mysore		6
+191	akhil	mysore		12
+101	reshab	mumbai		1
+114	reab	mumbai		7
+78	ludiya	kolkatta	4
+76	luya	kolkatta	10
+109	rohit	kochi		5
+119	ritu	kochi		11
+107	Amal	delhi		2
+189	Amul	delhi		8
+103	jobin	bangalore	3
+190	bin	bangalore	9
+-----------------------------------------------------------------------------------------------------------
+select count(reg_id),city from college group by city;
+
+count(reg_id)	city
+2		mumbai
+2		delhi
+2		bangalore
+2		kolkatta
+2		kochi
+2		mysore
+-----------------------------------------------------------------------------------------------------------
+alter table college add year varchar(20);
+select * from college;
+
+reg_id	name	city		l_id	year
+101	reshab	mumbai		1	NULL
+107	Amal	delhi		2	NULL
+103	jobin	bangalore	3	NULL
+78	ludiya	kolkatta	4	NULL
+109	rohit	kochi		5	NULL
+111	abdul	mysore		6	NULL
+114	reab	mumbai		7	NULL
+189	Amul	delhi		8	NULL
+190	bin	bangalore	9	NULL
+76	luya	kolkatta	10	NULL
+119	ritu	kochi		11	NULL
+191	akhil	mysore		12	NULL
+------------------------------------------------------------------------------------------------------------
+alter table college modify year integer;
+desc college;
+
+Field	Type		Null	Key	Default	Extra
+reg_id	int		YES		NULL	
+name	varchar(30)	YES		NULL	
+city	varchar(20)	YES		NULL	
+l_id	int		YES		NULL	
+year	int		YES		NULL	
+------------------------------------------------------------------------------------------------------------
+alter table college drop year;
+desc college;
+
+Field	Type		Null	Key	Default	Extra
+reg_id	int		YES		NULL	
+name	varchar(30)	YES		NULL	
+city	varchar(20)	YES		NULL	
+l_id	int		YES		NULL	
+------------------------------------------------------------------------------------------------------------
+select min(l_id) from college;
+
+min(l_id)
+1
+------------------------------------------------------------------------------------------------------------
+select max(l_id) from college;
+
+max(l_id)
+12
+------------------------------------------------------------------------------------------------------------
+select avg(l_id) from college;
+
+avg(l_id)
+6.5000
+------------------------------------------------------------------------------------------------------------
+select * from college where city like 'm%';
+
+reg_id	name	city	l_id
+101	reshab	mumbai	1
+111	abdul	mysore	6
+114	reab	mumbai	7
+191	akhil	mysore	12
+------------------------------------------------------------------------------------------------------------
+select * from college where city like '%i';
+
+reg_id	name	city	l_id
+101	reshab	mumbai	1
+107	Amal	delhi	2
+109	rohit	kochi	5
+114	reab	mumbai	7
+189	Amul	delhi	8
+119	ritu	kochi	11
+------------------------------------------------------------------------------------------------------------
+select * from college where city='delhi' and reg_id=189;
+
+reg_id	name	city	l_id
+189	Amul	delhi	8
+------------------------------------------------------------------------------------------------------------
+select * from college where city='delhi' or city='mysore';
+
+reg_id	name	city	l_id
+107	Amal	delhi	2
+111	abdul	mysore	6
+189	Amul	delhi	8
+191	akhil	mysore	12
+------------------------------------------------------------------------------------------------------------
+select * from college where city in ('bangalore','mumbai');
+
+reg_id	name	city		l_id
+101	reshab	mumbai		1
+103	jobin	bangalore	3
+114	reab	mumbai		7
+190	bin	bangalore	9
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

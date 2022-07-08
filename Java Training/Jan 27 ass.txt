@@ -1,0 +1,54 @@
+Assignment 1 – Create Files and Directories
+Create a class TestFile with a main method.
+
+Do the Following
+•      Create a folder named ‘Badminton’ in D or E drive based on system configuration
+•      Create two files in the folder named “singles.txt” and “dubbles.txt”.
+•      Create sub folder named “courts” in Badminton folder
+•      Create a file named smash.dat in “courts” folder
+•      Rename the dubbles.txt created earlier to doubles.txt
+•      Delete the file singles.txt
+
+
+Assignment 2 – Get Directory Details
+Create a class FolderInfo with a static method printDirectory. 
+
+printDirectory method should accept a folder path of type String as parameter. The method should print the contents of the passed folder as per below rules
+•      If folder does not exist, print message “No Folder exists with the given name”
+•      Details of every file in the given folder should be printed as below
+o      File : <filename>
+Absolute File path : <absolute path>
+Folder Path : <path of file excluding the file name> 
+•      Details of sub folder in the given folder should be printed as below
+o      Directory : <sub folder name>
+o      Path : <path of subfolder excluding the subfolder name>
+
+Note: Only the files and subfolders in the given folder needs to be printed. Details of files and folders in sub folders need not be printed.
+
+ 
+Assignment 3 – Storing Proverbs
+Mavis uses a lots of good proverbs while talking and Raghu is impressed by that. Raghu schedules a meeting with Mavis, to compile a list of all proverb’s Mavis knows. Raghu plans to store the proverbs in a file by creating a program. Help Raghu create the below program.
+
+Create a class named ProverbCollection with a static method storeProverb. The method takes proverb of type String as a parameter and writes the proverb to a file named TopProverbs.txt. 
+
+Note: Use BufferedOutputStream to write to the file
+
+Create a main method in the same class and do the following:
+•      Use a Scanner to accept a proverb
+•      Invoke method storeProverb, to write the proverb to a File.
+•      Program should ask the user to enter proverbs repeatedly until the user types “STOP”
+
+
+Assignment 4 – Copy Image
+Create a class ImageCopy with a static method copyImage. 
+
+Method copyImage should take a File object as input and return a boolean. If file is copied successfully, return true. The method should create a copy of the image in the same folder as that of the given image. The filename of the copied file should be “<sourcefilename>_copy.jpeg”.
+
+Note: Use BufferedInputStream and BufferedOutputStream for copying
+
+Create a class, TestImageCopy with a main method and do the following
+•      Accept image file path using Scanner
+•      If file does not exist in file system display message “File not Found”
+•      If the extension of file is not jpg, display message “File format not supported”
+•      Invoke the method copyImage
+If image is copied successfully, print message “Image copied Successfully”, else print “Image copy Unsuccessful”

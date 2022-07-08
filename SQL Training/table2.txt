@@ -1,0 +1,199 @@
+CREATE TABLE `batch98`.`employee` (
+  `EMPNO` INT NOT NULL,
+  `ENAME` VARCHAR(45) NULL,
+  `JOB` VARCHAR(45) NULL,
+  `HIREDATE` DATE NULL,
+  `MGR` INT NULL,
+  `SAL` INT NULL,
+  `COMM` INT NULL,
+  `DEPTNO` INT NULL,
+  PRIMARY KEY (`EMPNO`));
+  
+ 
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7369, 'SMITH', 'CLERK', '1980-12-17', 7902, 800, 20);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO) VALUES (7499, 'ALLEN', 'SALESMAN', '1981-02-20', 7698, 1600,300, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO) VALUES (7521, 'WARD', 'SALESMAN', '1981-02-22', 7698, 1250, 500, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7566, 'JONES', 'MANAGER', '1981-04-02', 7839, 2975, 20);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO) VALUES (7654, 'MARTIN', 'SALESMAN', '1981-09-28', 7698, 1250, 1400, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7698, 'BLAKE', 'MANAGER', '1981-05-01', 7839, 2850, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7782, 'CLARK', 'MANAGER', '1981-06-09', 7839, 2400, 10);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7788, 'SCOTT', 'ANALYST', '1987-04-19', 7566, 3000, 20);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, SAL, DEPTNO) VALUES (7839, 'KING', 'PRESIDENT', '1981-11-17', 5000, 10);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO) VALUES (7844, 'TURNER', 'SALESMAN', '1981-09-08', 7698, 1500,0, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7876, 'ADAMS', 'CLERK', '1987-05-23', 7788, 1100, 20);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7900, 'JAMES', 'CLERK', '1981-12-03', 7698, 950, 30);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7902, 'FORD', 'ANALYST', '1981-12-03', 7566, 3000, 20);
+INSERT INTO batch98.employee (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, DEPTNO) VALUES (7934, 'MILLER', 'CLERK', '1982-01-23', 7782, 1300, 10);
+
+SELECT * FROM batch98.employee;
+
+# 1. Create the above table.
+======================================================================================================================================
+# 2. Select the employees in department 30.
+SELECT ENAME FROM batch98.employee WHERE DEPTNO=30;
+======================================================================================================================================
+# 3. List the names, numbers and departments of all clerks.
+SELECT ENAME,EMPNO,DEPTNO FROM batch98.employee WHERE JOB='CLERK';
+======================================================================================================================================
+# 4. Find the department numbers and names of employees of all departments with deptno greater than 20.
+SELECT EMPNO,ENAME FROM batch98.employee WHERE DEPTNO>20;
+======================================================================================================================================
+# 5. Find employees whose commission is greater than their salaries.
+SELECT * FROM batch98.employee WHERE COMM>SAL;
+======================================================================================================================================
+# 6. Find employees whose commission is greater than 60 % of their salaries.
+SELECT * FROM batch98.employee WHERE COMM>0.6*SAL;
+======================================================================================================================================
+# 7. List name, job and salary of all employees in department 20 who earn more than 2000/-.
+SELECT ENAME,JOB,SAL FROM batch98.employee WHERE DEPTNO=20 AND SAL>2000;
+======================================================================================================================================
+# 8. Find all salesmen in department 30 whose salary is greater than 1500/-.
+#SELECT * FROM batch98.employee WHERE JOB='SALESMAN' AND DEPTNO=30 AND SAL>1500;
+======================================================================================================================================
+# 9. Find all employees whose designation is either manager or president.
+SELECT * FROM batch98.employee WHERE JOB IN ('MANAGER','PRESIDENT');
+======================================================================================================================================
+# 10. Find all managers who are not in department 30.
+SELECT * FROM batch98.employee WHERE JOB='MANAGER' AND DEPTNO!=30;
+======================================================================================================================================
+# 11. Find all the details of managers and clerks in dept 10.
+SELECT * FROM batch98.employee WHERE JOB IN ('MANAGER','CLERK') AND DEPTNO=10;
+======================================================================================================================================
+# 12. Find the details of all the managers (in any dept) and clerks in dept 20.
+SELECT * FROM batch98.employee WHERE JOB='MANAGER' OR( JOB='CLERK' AND DEPTNO=20);
+======================================================================================================================================
+# 13. Find the details of all the managers in dept. 10 and all clerks in dept 20 and all employees who are neither managers nor clerks but whose salary is more than or equal to 2000/-.
+SELECT * FROM batch98.employee WHERE (JOB='MANAGER' AND DEPTNO=10) OR (JOB='CLERK' AND DEPTNO=20) OR (JOB NOT IN ('MANAGER', 'CLERK') AND SAL>=2000);
+======================================================================================================================================
+# 14. Find the names of anyone in dept. 20 who is neither manager nor clerk.
+SELECT ENAME FROM batch98.employee WHERE DEPTNO = 20 AND JOB NOT IN ('MANAGER', 'CLERK');
+======================================================================================================================================
+# 15. Find the names of employees who earn between 1200/- and 1400/-.
+SELECT ENAME FROM batch98.employee WHERE SAL BETWEEN 1200 AND 1400;
+======================================================================================================================================
+# 16. Find the employees who are clerks, analysts or salesmen.
+SELECT * FROM batch98.employee WHERE JOB IN ('CLERK','ANALYST','SALESMAN');
+======================================================================================================================================
+# 17. Find the employees who are not clerks, analysts or salesmen.
+SELECT * FROM batch98.employee WHERE JOB NOT IN ('CLERK','ANALYST','SALESMAN');
+======================================================================================================================================
+# 18. Find the employees who do not receive commission.
+SELECT * FROM batch98.employee WHERE COMM IS NULL;
+======================================================================================================================================
+# 19. Find the different jobs of employees receiving commission.
+SELECT DISTINCT JOB FROM batch98.employee WHERE COMM IS NOT NULL;
+======================================================================================================================================
+# 20. Find the employees who do not receive commission or whose commission is less than 100/-.
+SELECT * FROM batch98.employee WHERE COMM < 100 OR COMM IS NULL;
+======================================================================================================================================
+# 21. If all the employees not receiving commission is entitles to a bonus of Rs. 250/- show the net earnings of all the employees.
+select IF (COMM is null , (SAL + 250), (SAL + COMM)) as totalEarnings from batch98.employee ;
+======================================================================================================================================
+# 22. Find all the employees whose total earning is greater than 2000/- .
+SELECT * FROM batch98.employee WHERE (SAL+COMM)>2000 OR (SAL>2000 AND COMM IS NULL);
+======================================================================================================================================
+# 23. Find all the employees whose name begins or ends with ‘M’
+SELECT * FROM batch98.employee WHERE ENAME='M%' OR ENAME='%M';
+======================================================================================================================================
+# 24. Find all the employees whose names contain the letter ‘M’ in any case.
+#SELECT * FROM batch98.employee WHERE ENAME LIKE '%M%' OR ENAME LIKE '%m%';
+======================================================================================================================================
+# 25. Find all the employees whose names are upto 15 character long and have letter ‘R’ as 3rd character of their names.
+SELECT * FROM batch98.employee WHERE CHAR_LENGTH(ENAME)<=15 AND ENAME LIKE '__R%';
+======================================================================================================================================
+# 26. Find all the employees who were hired in the month of February (of any year).
+SELECT * FROM batch98.employee WHERE MONTH(HIREDATE)=2;
+======================================================================================================================================
+# 27. Find all the employees who were hired on last day of the month.
+SELECT* FROM batch98.employee WHERE HIREDATE=LAST_DAY(HIREDATE);
+======================================================================================================================================
+# 28. Find all the employees who were hired more than 2 years ago.
+SELECT * FROM batch98.employee WHERE DAYDIFF(NOW(),HIREDATE)>=730;
+======================================================================================================================================
+# 29. Find the managers hired in the year 2003.
+SELECT * FROM batch98.employee WHERE YEAR(HIREDATE)=2003 AND JOB='MANAGER';
+======================================================================================================================================
+# 30. Display the names and jobs of all the employees separated by a space.
+SELECT CONCAT(ENAME,' ', JOB) FROM batch98.employee;
+======================================================================================================================================
+# 31. Display the names of all the employees right aligning them to 15 characters.
+SELECT LPAD(ENAME,15,' ') FROM batch98.employee;
+======================================================================================================================================
+# 32. Display the names of all the employees padding them to the right up to 15 characters with ‘*’.
+SELECT RPAD(ENAME,15,'*') FROM batch98.employee;
+======================================================================================================================================
+# 33. Display the names of all the employees without any leading ‘A’.
+SELECT ENAME FROM batch98.employee WHERE ENAME NOT LIKE 'A%';
+======================================================================================================================================
+# 34. Display the names of all the employees without any trailing ‘R’.
+SELECT ENAME FROM batch98.employee WHERE ENAME NOT LIKE '%R';
+======================================================================================================================================
+# 35. Show the first 3 and last 3 characters of the names of all the employees.
+SELECT SUBSTRING(ENAME,1,3),SUBSTRING(ENAME,LENGTH(ENAME)-2,LENGTH(ENAME)) FROM batch98.employee;
+======================================================================================================================================
+# 36. Display the names of all the employees replacing ‘A’ with ‘a’.
+SELECT REPLACE(ENAME,'A','a') FROM batch98.employee;
+======================================================================================================================================
+# 37. Display the names of all the employees and position where the string ‘AR’ occurs in the name.
+SELECT ENAME,POSITION('AR' IN ENAME) FROM batch98.employee WHERE ENAME LIKE '%AR%';
+======================================================================================================================================
+# 38. Show the salary of all the employees , rounding it to the nearest Rs. 1000/-.
+SELECT SAL,ROUND((SAL/1000),0)*1000 FROM batch98.employee;
+======================================================================================================================================
+#39. Show the salary of all the employees , ignoring the fraction less than Rs. 1000/-.
+SELECT SAL FROM batch98.employee WHERE FLOOR(SAL)<1000;
+======================================================================================================================================
+#40. Show the names of all the employees and date on which they completed 3 years of service.
+SELECT ENAME,DATE_ADD(HIREDATE,INTERVAL 3 YEAR) FROM batch98.employee;
+======================================================================================================================================
+#41. For each employee, display the no. of days passed since the employee joined the company.
+SELECT ENAME,DATEDIFF(NOW(),HIREDATE) FROM batch98.employee;
+======================================================================================================================================
+#42. For each employee, display the no. of months passed since the employee joined the company.
+SELECT ENAME,PERIOD_DIFF(DATE_FORMAT(NOW(), '%Y%m'),DATE_FORMAT(HIREDATE, '%Y%m')) FROM batch98.employee;
+======================================================================================================================================
+#43. Display the details of all the employees sorted on the names.
+SELECT * FROM batch98.employee ORDER BY ENAME ASC;
+======================================================================================================================================
+#44. Display the names of the employees, based on the tenure with the oldest employee coming first.
+SELECT * FROM batch98.employee ORDER BY HIREDATE ASC;
+======================================================================================================================================
+#45. Display the names, jobs and salaries of employees, sorting on job and salary.
+SELECT ENAME,JOB,SAL FROM batch98.employee ORDER BY JOB ASC, SAL ASC;
+======================================================================================================================================
+#46. Display the names, jobs and salaries of employees, sorting on descending order of job and within job sorted on salary.
+SELECT ENAME,JOB,SAL FROM batch98.employee ORDER BY JOB DESC, SAL ASC;
+======================================================================================================================================
+#47. List the employee names, department names and salary for those employees who have completed 1 year of service.
+SELECT ENAME,DEPTNO,SAL FROM batch98.employee WHERE PERIOD_DIFF(DATE_FORMAT(NOW(), '%Y%m'),DATE_FORMAT(HIREDATE, '%Y%m'))>=12;
+======================================================================================================================================
+#48. List the employee names, department names and salary for those employees who are earning 0 commission or commission is null. Sort your output in the order of department name.
+SELECT ENAME,DEPTNO,SAL FROM batch98.employee WHERE COMM=0 OR COMM IS NULL ORDER BY DEPTNO ASC;
+======================================================================================================================================
+#49. List the employee names, department names and hiredate for those employees who have joined in 2003 . Sort your output in the order of joining date.
+SELECT ENAME,DEPTNO,HIREDATE FROM batch98.employee WHERE YEAR(HIREDATE)=2003 ORDER BY HIREDATE ASC;
+======================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+package JUnitTesting;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TestMyClass {
+MyClass ob=null;
+
+ @Before
+public void setup() {
+ob=new MyClass();
+}
+// @Before- it runs before every test case
+// @BeforeClass- it runs once before testing starts
+//
+//
+// @AfterClass- it runs once after testing ends
+//
+//
+// @After - it runs after every test case
+@Test
+public void testCaseChange() {
+String str=ob.caseChange("khushboo");
+assertEquals("KHUSHBOO",str );
+
+}
+
+ @Test
+public void testReverseString() {
+assertEquals("dlroWolleH",ob.reverseString("Hello World") );
+assertEquals("olleh",ob.reverseString("hello") );
+}
+
+}

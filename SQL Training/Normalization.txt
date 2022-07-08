@@ -1,0 +1,81 @@
+Normalization
+--------------
+ Technique that reduces "data redundancy" and eliminates undesirable characteristics like Insertion, Update and Deletion Anomalies.
+ Normalization rules divides larger tables into smaller tables and links them using relationships. 
+
+==============================================================
+1NF (First Normal Form) Rule
+------------------------------
+Each table cell should contain a single value.
+Each row should be unique.
+
+Multi-valued attribute:
+ID   Name   Courses
+------------------
+1    A      c1, c2
+2    E      c3
+3    M      C2, c3
+
+
+Single valued attribute:
+ID   Name   Course
+------------------
+1    A       c1
+1    A       c2
+2    E       c3
+3    M       c2
+3    M       c3
+
+==============================================================================
+2NF (Second Normal Form) Rule
+-------------------------------
+ Single Column Primary Key that does not functionally dependant on any subset of candidate key relation
+
+------------------------------
+
+------------------------------
+Roll	Name	Subject
+19		Rajesh	Math
+19		Rajesh	Science
+23		Supriya	History
+23		Supriya	English
+32		Zack	Geography
+------------------------------
+
+------------------------------
+Roll	Name
+19		Rajesh
+23		Supriya
+32		Zack
+------------------------------
+
+------------------------------
+Roll	Subject
+19		Math
+19		Science
+23		History
+23		English
+32		Geography
+===============================================================================
+3NF (Third Normal Form) Rule
+-------------------------------
+ Has no transitive functional dependencies
+ 
+ 
+----------------------------------------------------
+EMP_ID	EMP_NAME	EMP_DEPT	EMP_STATE	EMP_ COUNTRY
+289		Mike		Sales		Florida		U.S.
+378		Sameer		Finance		Maharashtra	India
+989		Nicki		Marketing	Texas		U.S.
+
+---------------------------------------------------------------------------------------
+				Table1							|				Table2
+EMP_ID	EMP_NAME	EMP_DEPT	EMP_STATE		|		EMP_STATE		EMP_ COUNTRY
+289		Mike		Sales		Florida			|		Florida			U.S.
+378		Sameer		Finance		Maharashtra		|		Maharashtra		India
+989		Nicki		Marketing	Texas			|		Texas			U.S.
+												|
+----------------------------------------------------------------------------------------
+
+
+

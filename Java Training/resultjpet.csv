@@ -1,0 +1,43 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1645598776949,2364,1 /actions/Catalog.action,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,5419,317,2,2,null,0,4089,0
+1645598781034,2364,1 /actions/Catalog.action,200,,Thread Group 1-1,text,true,,5419,317,2,2,https://petstore.octoperf.com/actions/Catalog.action,2363,0,2140
+1645598783402,2015,17 signIn,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,3851,489,3,3,null,0,1,0
+1645598783403,2015,17 signIn,200,,Thread Group 1-1,text,true,,3851,489,3,3,https://petstore.octoperf.com/actions/Account.action;jsessionid=98DF1E667EA8EB577088BEC188517CB4?signonForm=,2015,0,1645
+1645598780280,2627,1 /actions/Catalog.action,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,5419,317,3,3,null,0,4004,0
+1645598784282,2627,1 /actions/Catalog.action,200,,Thread Group 1-2,text,true,,5419,317,3,3,https://petstore.octoperf.com/actions/Catalog.action,2627,0,2340
+1645598785419,2047,18 login,200,"Number of samples in transaction : 6, number of failing samples : 3",Thread Group 1-1,,false,,25969,4002,3,3,null,0,2,0
+1645598785419,1008,18 login,200,,Thread Group 1-1,text,false,Test failed: text expected not to contain /Signon failed/,3927,820,3,3,https://petstore.octoperf.com/actions/Account.action,1008,0,621
+1645598786427,192,19 login,200,,Thread Group 1-1,text,true,,4728,514,3,3,https://petstore.octoperf.com/actions/Catalog.action,191,0,0
+1645598786620,203,18 login,200,,Thread Group 1-1,text,false,Test failed: text expected not to contain /Signon failed/,3927,820,3,3,https://petstore.octoperf.com/actions/Account.action,202,0,0
+1645598786823,208,19 login,200,,Thread Group 1-1,text,true,,4728,514,3,3,https://petstore.octoperf.com/actions/Catalog.action,208,0,0
+1645598787032,216,18 login,200,,Thread Group 1-1,text,false,Test failed: text expected not to contain /Signon failed/,3931,820,3,3,https://petstore.octoperf.com/actions/Account.action,216,0,0
+1645598787249,220,19 login,200,,Thread Group 1-1,text,true,,4728,514,3,3,https://petstore.octoperf.com/actions/Catalog.action,219,0,0
+1645598786911,1177,17 signIn,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,3849,489,3,3,null,0,0,0
+1645598786911,1177,17 signIn,200,,Thread Group 1-2,text,true,,3849,489,3,3,https://petstore.octoperf.com/actions/Account.action;jsessionid=98DF1E667EA8EB577088BEC188517CB4?signonForm=,1177,0,976
+1645598787469,1491,21 signout,200,"Number of samples in transaction : 2, number of failing samples : 0",Thread Group 1-1,,true,,9749,1308,3,3,null,0,3,0
+1645598787470,1291,21 signout,200,,Thread Group 1-1,text,true,,5021,875,3,3,https://petstore.octoperf.com/actions/Catalog.action,998,0,621
+1645598788762,200,22 signout,200,,Thread Group 1-1,text,true,,4728,433,3,3,https://petstore.octoperf.com/actions/Catalog.action,198,0,0
+1645598783612,2202,1 /actions/Catalog.action,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,5419,317,2,2,null,0,4010,0
+1645598787623,2202,1 /actions/Catalog.action,200,,Thread Group 1-3,text,true,,5419,317,2,2,https://petstore.octoperf.com/actions/Catalog.action,2201,0,2004
+1645598788090,2003,18 login,200,"Number of samples in transaction : 6, number of failing samples : 3",Thread Group 1-2,,false,,25971,4002,2,2,null,0,4,0
+1645598788090,203,18 login,200,,Thread Group 1-2,text,false,Test failed: text expected not to contain /Signon failed/,3929,820,3,3,https://petstore.octoperf.com/actions/Account.action,203,0,0
+1645598788294,194,19 login,200,,Thread Group 1-2,text,true,,4728,514,3,3,https://petstore.octoperf.com/actions/Catalog.action,193,0,0
+1645598788488,278,18 login,200,,Thread Group 1-2,text,false,Test failed: text expected not to contain /Signon failed/,3929,820,3,3,https://petstore.octoperf.com/actions/Account.action,278,0,0
+1645598788767,193,19 login,200,,Thread Group 1-2,text,true,,4728,514,3,3,https://petstore.octoperf.com/actions/Catalog.action,187,0,0
+1645598788961,927,18 login,200,,Thread Group 1-2,text,false,Test failed: text expected not to contain /Signon failed/,3929,820,2,2,https://petstore.octoperf.com/actions/Account.action,927,0,510
+1645598789889,208,19 login,200,,Thread Group 1-2,text,true,,4728,514,2,2,https://petstore.octoperf.com/actions/Catalog.action,207,0,0
+1645598790098,630,21 signout,200,"Number of samples in transaction : 2, number of failing samples : 0",Thread Group 1-2,,true,,9749,1308,2,2,null,0,0,0
+1645598790098,431,21 signout,200,,Thread Group 1-2,text,true,,5021,875,2,2,https://petstore.octoperf.com/actions/Catalog.action,214,0,0
+1645598790529,199,22 signout,200,,Thread Group 1-2,text,true,,4728,433,2,2,https://petstore.octoperf.com/actions/Catalog.action,199,0,0
+1645598789826,2640,17 signIn,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,3849,489,1,1,null,0,0,0
+1645598789826,2640,17 signIn,200,,Thread Group 1-3,text,true,,3849,489,1,1,https://petstore.octoperf.com/actions/Account.action;jsessionid=98DF1E667EA8EB577088BEC188517CB4?signonForm=,2640,0,1849
+1645598792466,5103,18 login,200,"Number of samples in transaction : 6, number of failing samples : 0",Thread Group 1-3,,true,,30384,5685,1,1,null,0,2,0
+1645598792467,1730,18 login,200,,Thread Group 1-3,text,true,,5173,1381,1,1,https://petstore.octoperf.com/actions/Catalog.action,1525,0,1325
+1645598794197,211,19 login,200,,Thread Group 1-3,text,true,,4955,514,1,1,https://petstore.octoperf.com/actions/Catalog.action,210,0,0
+1645598794408,1586,18 login,200,,Thread Group 1-3,text,true,,5173,1381,1,1,https://petstore.octoperf.com/actions/Catalog.action,213,0,0
+1645598795994,194,19 login,200,,Thread Group 1-3,text,true,,4955,514,1,1,https://petstore.octoperf.com/actions/Catalog.action,193,0,0
+1645598796188,487,18 login,200,,Thread Group 1-3,text,true,,5173,1381,1,1,https://petstore.octoperf.com/actions/Catalog.action,292,0,0
+1645598796675,895,19 login,200,,Thread Group 1-3,text,true,,4955,514,1,1,https://petstore.octoperf.com/actions/Catalog.action,895,0,490
+1645598797571,627,21 signout,200,"Number of samples in transaction : 2, number of failing samples : 0",Thread Group 1-3,,true,,9749,1308,1,1,null,0,0,0
+1645598797571,439,21 signout,200,,Thread Group 1-3,text,true,,5021,875,1,1,https://petstore.octoperf.com/actions/Catalog.action,229,0,0
+1645598798010,188,22 signout,200,,Thread Group 1-3,text,true,,4728,433,1,1,https://petstore.octoperf.com/actions/Catalog.action,188,0,0

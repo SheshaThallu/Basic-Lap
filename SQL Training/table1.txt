@@ -1,0 +1,26 @@
+CREATE TABLE `batch98`.`student` (
+`regd_no` INT NOT NULL,
+`name` VARCHAR(45) NULL,
+`branch` VARCHAR(45) NULL,
+PRIMARY KEY (`regd_no`));
+
+# INSERT INTO batch98.student VALUES( 0001, 'Ram', 'CSE');
+# INSERT INTO batch98.student VALUES( 0002, 'Hari', 'MECH');
+# INSERT INTO batch98.student VALUES( 0003, 'Pradeep', 'EEE');
+# INSERT INTO batch98.student VALUES( 0004, 'Deepak', 'ETC');
+
+# SELECT * FROM batch98.student;
+
+# 1. Write down the SQL command which will show the Regd. No of Pradeep.
+# SELECT REGD_NO FROM batch98.student WHERE NAME='Pradeep';
+
+# 2. Write down the SQL command which will show the Name and Branch column.
+# SELECT NAME,BRANCH FROM batch98.student;
+
+# 3. Write a SQL command which will count the number of rows existing in STUDENT table.
+# SELECT count(REGD_NO) FROM batch98.student;
+
+# 4. I want to add another column in the STUDENT table as ”address”. How can I do that?
+# ALTER table batch98.student add column address varchar(20);
+# SELECT * FROM batch98.student;
+

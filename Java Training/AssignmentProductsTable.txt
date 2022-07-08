@@ -1,0 +1,128 @@
+Table creation - PRODUCTS
+PRODUCTS table will be used for the assignments. 
+Create the PRODUCTS table and populate data by running the below script
+  DROP TABLE PRODUCTS;
+  CREATE TABLE PRODUCTS 
+   (   PROD_CODE INT(4) PRIMARY KEY, 
+       PROD_NAME VARCHAR(40), 
+       PROD_PRICE INT(8),
+       PROD_CATG VARCHAR(15)
+   ) ;
+
+ INSERT INTO PRODUCTS VALUES(101,'Laptop',40000,'Electronics');
+ INSERT INTO PRODUCTS VALUES(102,'Keyboard',500,'Electronics');
+ INSERT INTO PRODUCTS VALUES(103,'Mouse',350,'Electronics');
+ INSERT INTO PRODUCTS VALUES(104,'T-Shirt',900,'Clothing');
+ INSERT INTO PRODUCTS VALUES(105,'Jeans',1500,'Clothing');
+ 
+ Assignment 1 – List All Products
+
+Create a Class ProductsDemo1 with a main method. 
+Display the details of all products stored in the Table Products.
+
+
+
+Assignment 2 – List Product for a given product code
+
+Create a Class ProductsDemo2 with a main method. 
+Use a Scanner to accept product code from the user. 
+Display the details of the product from the Table Products for the product code provided by the User
+
+
+
+Sample Input
+
+Enter Product Code
+
+101
+
+Sample Output
+
+Product Details
+
+Code : 101
+
+Name : Laptop
+
+Price  : 40000
+
+Category : Electronics
+
+
+Assignment 3 – Insert Products
+
+Create a class Product with required member variables, constructor and getter/setters.
+
+
+
+Create a Class ProductsDemo3 with a main method.
+
+In main method:
+
+•      Use a Scanner to accept the number of products to be inserted and the product details of each product.
+
+•      Store the product details accepted from user in an ArrayList of Product
+
+•      Insert the products in the Table PRODUCT by reading the ArrayLis
+
+
+
+
+
+Sample Input
+
+Enter number of Products
+
+2
+
+Enter details for product 1
+
+101 Laptop 40000 Electronics
+
+Enter details for product 2
+
+102 Shirt 1500 Clothing
+
+
+Sample Output
+
+All Products Inserted
+
+
+Assignment 4 – Update Product Price
+Create a Class ProductDemo4 with a main method.
+
+ In main method:
+•      Select all the products in a ResultSet from the Table PRODUCTS
+•      Update the Table data by updating the ResultSet data based on the following rules
+o      If the category is ‘Electronics’ and the product price is less than 1000, increase the price by 10 %
+o      If the category is ‘Clothing’ and the price is greater than 1000, decrease the price by 10 %
+
+Verify the updated data in the table after running the program
+
+
+Assignment 5 – Data Access Object
+
+Create a class Product with required member variables, constructor and getter/setters.
+
+
+
+Create a class DBUtil with a static method getConnection(). The static method should return a Connection object.
+
+
+
+Create a Class ProductDAO with the following methods.
+
+•      public boolean insertProduct(Product prod){}
+
+o      This method should insert the product passed in the parameter in table PRODUCTS and return a boolean
+
+•      public Product getProduct(int prodCode){}
+
+o      This method should get the product with product code passed in the parameter from the Table PRODUCT
+
+Create class ProductDemo5 with main method:
+
+•      Use Scanner and get product details. Insert the Product in the table using ProductDAO
+
+•      Use Scanner to get productCode and display the Product details using ProductDAO

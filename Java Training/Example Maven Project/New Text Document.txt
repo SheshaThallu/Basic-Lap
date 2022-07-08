@@ -1,0 +1,243 @@
+package com.torryharris.JdbcApp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.torryharris.JdbcApp.dao.EmployeeDoa;
+import com.torryharris.JdbcApp.model.Employee;
+
+
+public class App
+{
+public static void main( String[] args )
+{
+
+System.out.println("Press 1 to add employee");
+System.out.println("Press 2 to view employee");
+System.out.println("Press 3 to delete employee");
+System.out.println("Press 4 to update employee");
+Scanner sc=new Scanner(System.in);
+int choice =sc.nextInt();
+int id; String name,department;
+switch(choice) {
+case 1:
+System.out.println("enter id:");
+id=sc.nextInt();
+System.out.println("enter name:");
+name=sc.next();
+System.out.println("enter department:");
+department=sc.next();
+Employee emp=new Employee(id, name, department);
+boolean flag = EmployeeDoa.addEmployee(emp);
+if(flag) {
+System.out.println("Employee Added");
+}
+else {
+System.err.println("Something went wrong");
+}
+break;
+
+}
+
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.torryharris.JdbcApp.model;
+
+public class Employee {
+private int empId;
+private String empName;
+private String department;
+public Employee() {
+super();
+}
+public Employee(int empId, String empName, String department) {
+super();
+this.empId = empId;
+this.empName = empName;
+this.department = department;
+}
+/**
+* @return the empId
+*/
+public int getEmpId() {
+return empId;
+}
+/**
+* @param empId the empId to set
+*/
+public void setEmpId(int empId) {
+this.empId = empId;
+}
+/**
+* @return the empName
+*/
+public String getEmpName() {
+return empName;
+}
+/**
+* @param empName the empName to set
+*/
+public void setEmpName(String empName) {
+this.empName = empName;
+}
+/**
+* @return the department
+*/
+public String getDepartment() {
+return department;
+}
+/**
+* @param department the department to set
+*/
+public void setDepartment(String department) {
+this.department = department;
+}
+@Override
+public String toString() {
+return "Employee [empId=" + empId + ", empName=" + empName + ", department=" + department + "]";
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.torryharris.JdbcApp.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.torryharris.JdbcApp.ConnectionProvider;
+import com.torryharris.JdbcApp.model.Employee;
+
+public class EmployeeDoa {
+public static boolean addEmployee(Employee emp) {
+Connection con = ConnectionProvider.createConnection();
+Boolean flag=false;
+String query="insert into employee values(?,?,?)";
+try {
+PreparedStatement pstmt= con.prepareStatement(query);
+pstmt.setInt(1, emp.getEmpId());
+pstmt.setString(2,emp.getEmpName());
+pstmt.setString(3, emp.getDepartment());
+pstmt.executeUpdate();
+flag=true;
+
+} catch (SQLException e) {
+e.printStackTrace();
+}
+return flag;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.torryharris.JdbcApp;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectionProvider {
+
+private static String url="jdbc:mysql://localhost:3306/torry_haris";
+private static String username="root";
+private static String password="system";
+static Connection con=null;
+public static Connection createConnection() {
+try {
+con=DriverManager.getConnection(url,username,password);
+
+} catch (SQLException e) {
+e.printStackTrace();
+}
+return con;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
